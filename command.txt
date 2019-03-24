@@ -1,0 +1,12 @@
+# Inicialzite npm
+npm init
+
+# Inicialzite webpack
+npm install -g webpack --save-dev
+npm install -g webpack --save-dev
+
+# Verifies if webpack is already installed
+npm list webpack
+
+# run build
+npm run build
