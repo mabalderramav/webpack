@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack index.js --output bundle.js --mode development",
-    "build:local": "webpack --mode development"
+    "build:local": "webpack --mode development",
+    "build:css": "webpack --config ./css-style-loader/webpack.config.js --mode development"
   },
   "keywords": [
     "webpack"
@@ -14,6 +15,8 @@
   "author": "@mavalderramav",
   "license": "MIT",
   "devDependencies": {
+    "css-loader": "^2.1.1",
+    "style-loader": "^0.23.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   }
