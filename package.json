@@ -8,7 +8,8 @@
     "build": "webpack index.js --output bundle.js --mode development",
     "build:local": "webpack --mode development",
     "build:css": "webpack --config ./css-style-loader/webpack.config.js --mode development",
-    "build:extract:css": "webpack --config ./plugin-extract-text/webpack.config.js --mode development"
+    "build:extract:css": "webpack --config ./plugin-extract-text/webpack.config.js --mode development",
+    "build:multi": "webpack --config ./multiples-entry-points/webpack.config.js --mode development"
   },
   "keywords": [
     "webpack"
