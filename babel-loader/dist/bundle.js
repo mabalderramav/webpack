@@ -101,11 +101,22 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./ba
 /*!*******************************!*\
   !*** ./babel-loader/index.js ***!
   \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./estilos.css */ \"./babel-loader/estilos.css\");\n\nvar _message = __webpack_require__(/*! ./message.js */ \"./babel-loader/message.js\");\n\ndocument.write(_message.firstMessage);\nconsole.log('hola mundo! desde un webpack.config');\n\n//# sourceURL=webpack:///./babel-loader/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _estilos_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./estilos.css */ \"./babel-loader/estilos.css\");\n/* harmony import */ var _estilos_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_estilos_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./message.js */ \"./babel-loader/message.js\");\n/* harmony import */ var _message_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_message_js__WEBPACK_IMPORTED_MODULE_1__);\n\n\ndocument.write(_message_js__WEBPACK_IMPORTED_MODULE_1__[\"firstMessage\"]);\nObject(_message_js__WEBPACK_IMPORTED_MODULE_1__[\"delayedMessage\"])();\nconsole.log('hola mundo! desde un webpack.config');\n\n//# sourceURL=webpack:///./babel-loader/index.js?");
+
+/***/ }),
+
+/***/ "./babel-loader/make-message.js":
+/*!**************************************!*\
+  !*** ./babel-loader/make-message.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function makeMessage(msg) {\n  const element = document.createElement('p');\n  element.textContent = msg;\n  return element;\n};\n\n//# sourceURL=webpack:///./babel-loader/make-message.js?");
 
 /***/ }),
 
@@ -116,8 +127,18 @@ eval("\n\n__webpack_require__(/*! ./estilos.css */ \"./babel-loader/estilos.css\
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("\n\nmodule.exports = {\n  firstMessage: 'Hola mundo desde un módulo'\n};\n\n//# sourceURL=webpack:///./babel-loader/message.js?");
+eval("const renderToDom = __webpack_require__(/*! ./render-to-dom */ \"./babel-loader/render-to-dom.js\");\n\nconst makeMassage = __webpack_require__(/*! ./make-message */ \"./babel-loader/make-message.js\");\n\nconst waitTime = new Promise((allOk, allBad) => {\n  setTimeout(() => {\n    allOk('Han pasado 3 segundos :P');\n  }, 3000);\n});\nmodule.exports = {\n  firstMessage: 'Hola mundo desde un módulo',\n  delayedMessage: async () => {\n    const message = await waitTime;\n    console.log(message);\n    renderToDom(makeMassage(message));\n  }\n};\n\n//# sourceURL=webpack:///./babel-loader/message.js?");
+
+/***/ }),
+
+/***/ "./babel-loader/render-to-dom.js":
+/*!***************************************!*\
+  !*** ./babel-loader/render-to-dom.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function renderToDom(element) {\n  document.body.append(element);\n};\n\n//# sourceURL=webpack:///./babel-loader/render-to-dom.js?");
 
 /***/ })
 
